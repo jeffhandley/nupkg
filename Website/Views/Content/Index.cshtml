@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "nupkg.com - Your Packages, Our Passion";
+}
+
+<center>
+    <form id="form">
+        <p>
+            <input type="text" size="40" id="username" />
+        </p>
+        <p>
+            <span class="field-validation-error" style="display:none;" id="usernameHint">Enter a NuGet.org package owner's username</span>
+        </p>
+        <p>
+            <input type="submit" value="Let me see some packages!" id="submit" />
+        </p>
+    </form>
+</center>
+
+<script type="text/javascript">
+
+    $(function () {
+        $("#submit").click(function () {
+            var $username = $("#username");
+
+            if ($username.val() != "") {
+                location.href = "https://nuget.org/profiles/" + $username.val();
+            }
+            else {
+                $("#usernameHint").show();
+            }
+        });
+
+        $("#form").submit(function () { return false; });
+    });
+
+</script>
