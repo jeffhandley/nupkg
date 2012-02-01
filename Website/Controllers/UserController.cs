@@ -16,7 +16,7 @@ namespace Website.Controllers
                 return new RedirectResult("/Content/Index");
             }
 
-            return new RedirectResult(string.Format("https://nuget.org/profiles/{0}", user));
+            return new RedirectResult(string.Format("http://nuget.org/profiles/{0}", user));
         }
 
     }
