@@ -11,7 +11,8 @@ namespace Website.Routes
     {
         public override RouteData GetRouteData(HttpContextBase httpContext)
         {
-            var url = httpContext.Request.Headers["HOST"];
+            var url = httpContext.Request.Headers["HOST"].Replace("nupkg.com", "");
+
             var index = url.IndexOf(".");
 
             if (index < 0)
