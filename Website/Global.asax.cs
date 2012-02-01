@@ -22,13 +22,13 @@ namespace Website
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            routes.Add(new SubdomainRoute());
             routes.MapRoute(
                 "Default", // Route name
                 "{controller}/{action}/{id}", // URL with parameters
                 new { controller = "Content", action = "Index", id = UrlParameter.Optional } // Parameter defaults
             );
 
-            routes.Add(new SubdomainRoute());
         }
 
         protected void Application_Start()
